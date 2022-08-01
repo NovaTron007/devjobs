@@ -7,6 +7,7 @@
 - npm install mongoose
 - npm install validator
 - npm install colors
+- npm install slugify
 - npm install express-async-errors
 - npm install http-status-codes
 - npm install bcryptjs

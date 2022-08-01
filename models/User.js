@@ -50,6 +50,18 @@ UserSchema.pre("save", async function(){ // async await no need to pass next
     this.password = await bcrypt.hash(this.password, salt) // hash current user pass with salt
 })
 
+
+// methods when we want to operate on single doc, statics when we want to operate on entire collection.
+// statics called on model itself ie. uppercase Called on model itself ie:
+// const user = await User.create({ name,  email, role, password}) Getting data from user using model with create
+// now auth model can use it from user var after model call
+
+// match entered pass against hashed pass in db
+UserSchema.methods.matchPassword = function(password){
+    // will return true or false
+    return bcrypt.compare(password, this.password)
+}
+
 // jwt instance method: sign token on current user using model
 UserSchema.methods.createJWT = function() {
     console.log(this) // log user
