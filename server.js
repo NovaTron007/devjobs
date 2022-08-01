@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser"
 import connectDb from "./config/dbConnect.js" // mongoose connection
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js" // use to output js errors
 import authRouter from "./routes/authRoutes.js" // import route files to call controllers
+import jobRouter from "./routes/jobRoutes.js" // import route file to call controllers
 
 // create express server
 const app = express()
@@ -17,6 +18,8 @@ dotenv.config({path: "./config/config.env"})
 app.use(express.json())
 // Routes: prefix router then use router file for endpoint
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/jobs", jobRouter)
+
 // middleware
 app.use(errorHandlerMiddleware) // show js error messages
 // create cookie and store stuff in it

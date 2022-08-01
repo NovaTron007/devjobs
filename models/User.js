@@ -5,17 +5,18 @@ import bcrypt from "bcryptjs" // encrypt password
 
 
 const UserSchema = new mongoose.Schema({
-    firstName: {
+    userName: {
         type: String,
-        required: [true, "Name is required"],
-        minLength: 3,
+        required: [true, "User name is required"],
+        minLength:2,
         maxLength: 20,
         trim: true
     },
-    lastName: {
+    companyName: {
         type: String,
+        required: [true, "Company name is required"],
+        minLength: 3,
         maxLength: 20,
-        default: null,
         trim: true
     },
     email: {

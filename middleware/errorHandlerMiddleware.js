@@ -1,4 +1,4 @@
-// middlware file to handle error object and output response 
+// middleware file to handle error object and output response from mongoose errors
 import { StatusCodes } from "http-status-codes"
 
 const errorHandlerMiddleware = (err, req, res, next) => {
