@@ -21,11 +21,12 @@ const authUserMiddleware = async (req, res, next) => {
     
     // get user by id of clientToken
     const user = await User.findById(clientToken.id)
-    
+    console.log("user: ", user)
     // compare user id with clientToken.id
     try {
-        if(user.id == clientToken.id){
-            req.user = user.id
+        if(user.id === clientToken.id){
+            // set req.user object with a userId
+            req.user = { userId: clientToken.id }
         }
         // next middleware (controller)
         next()
@@ -33,7 +34,7 @@ const authUserMiddleware = async (req, res, next) => {
         throw new CustomErrorMessage("Unauthorised action!", StatusCodes.UNAUTHORIZED)
     }
 
-    console.log(`req.user: ${req.user} `.yellow.underline.bold)
+    console.log(`req.user.userId: ${req.user.userId} `.yellow.underline.bold)
 }
 
 export default authUserMiddleware

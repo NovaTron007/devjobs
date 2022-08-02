@@ -32,18 +32,20 @@ const JobSchema = new mongoose.Schema({
             trim: true
         }]
     },
-    location: {
-        city: {
-            type: String,
-            required: [true, "City is required"],
-            trim: true
-        },
-        country: {
-            type: String,
-            required: [true, "Country is required"],
-            trim: true
-        }
-    },  
+    city: {
+        type: String,
+        required: [true, "City is required"],
+        trim: true,
+        minLength: 2,
+        maxLength: 100
+    },
+    country: {
+        type: String,
+        required: [true, "Country is required"],
+        trim: true,
+        minLength: 2,
+        maxLength: 100
+    },
     createdAt: {
         type: Date,
         default: Date.now()
