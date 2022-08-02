@@ -2,11 +2,17 @@ import dotenv  from "dotenv"
 import "express-async-errors" // allow output of js errors to postman/client, w/o using next in controllers
 import express from "express"
 import colors from "colors"
-import cookieParser from "cookie-parser"
+import fileupload from "express-fileupload" // allow upload of files
+import cookieParser from "cookie-parser" // create cookies
 import connectDb from "./config/dbConnect.js" // mongoose connection
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js" // use to output js errors
-import authRouter from "./routes/authRoutes.js" // import route files to call controllers
-import jobRouter from "./routes/jobRoutes.js" // import route file to call controllers
+// es6 way to use __dirname (= current directory where this file resides)
+import path from "path" // node util to access file system
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+// import route files to call controllers
+import { authRouter, jobRouter, userRouter } from "./routes/index.js" 
 
 // create express server
 const app = express()
@@ -16,14 +22,19 @@ dotenv.config({path: "./config/config.env"})
 
 // parse json from body (use before routes,body parser now included)
 app.use(express.json())
-// Routes: prefix router then use router file for endpoint
-app.use("/api/v1/auth", authRouter)
-app.use("/api/v1/jobs", jobRouter)
-
+// upload files (import before route calls controller!!!)
+app.use(fileupload())
 // middleware
 app.use(errorHandlerMiddleware) // show js error messages
 // create cookie and store stuff in it
 app.use(cookieParser())
+// express static folder for file upload
+app.use(express.static(path.join(__dirname, "public")))
+
+// Routes: prefix router then use router file for endpoint
+app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/jobs", jobRouter)
+app.use("/api/v1/users", userRouter)
 
 // PORT constant env var
 const PORT = process.env.PORT 

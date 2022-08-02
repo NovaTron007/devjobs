@@ -12,13 +12,6 @@ const UserSchema = new mongoose.Schema({
         maxLength: 20,
         trim: true
     },
-    companyName: {
-        type: String,
-        required: [true, "Company name is required"],
-        minLength: 3,
-        maxLength: 20,
-        trim: true
-    },
     email: {
         type: String,
         required: [true, "Email is required"],
@@ -33,6 +26,17 @@ const UserSchema = new mongoose.Schema({
         required: [true, "Password is required"],
         minLength: 6,
         select: false // don't allow select query on password
+    },
+    companyName: {
+        type: String,
+        required: [true, "Company name is required"],
+        minLength: 3,
+        maxLength: 20,
+        trim: true
+    },
+    photo: {
+        type: String,
+        default: "no-photo.jpg"
     },
     role: {
         type: String,
