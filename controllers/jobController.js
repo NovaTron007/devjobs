@@ -1,9 +1,10 @@
 import { StatusCodes } from "http-status-codes"
+import CustomErrorMessage from "../classes/CustomErrorMessage.js"
 import Job from "../models/Job.js"
 
 
 // @desc    Get all Jobs
-// @route   POST /api/v1/auth/jobs
+// @route   POST /api/v1/jobs
 // @access  Public
 export const getJobs = async (req, res) => {
    // Get query params: in url ie: /jobs?type=full-time&search=frontend)
@@ -58,10 +59,10 @@ export const getJobs = async (req, res) => {
 
 
 // @desc    Create Job
-// @route   POST /api/v1/auth/jobs
+// @route   POST /api/v1/jobs
 // @access  Private
 export const createJob = async (req, res) => {
-    // append req.user from req obj to req.body
+    // append req.user from req.user.userId set in authUserMiddleware to req.body
     req.body.user = req.user.userId
     // create job
     const job = await Job.create(req.body)
@@ -73,6 +74,31 @@ export const createJob = async (req, res) => {
 }
 
 // @desc    Update Job
-// @route   PUT /api/v1/auth/jobs/:id
+// @route   PUT /api/v1/jobs/:id
 // @access  Private
+export const updateJob = async(req, res) => {
+   // get job from db by id (let as we will change)
+   let job = await Job.findById(req.params.id)
+
+   // check if job exists
+   if(!job) {
+      throw new CustomErrorMessage(`Job with id ${req.params.id} does not exist.`, StatusCodes.BAD_REQUEST)
+   }
+   
+   // check if is owner of job: check user field (has id) with authHeader req.user.userId
+   if(job.user.toString() !== req.user.userId) { // convert field user: new ObjectId("the user id") in job document
+      throw new CustomErrorMessage("Not authorised to update this job!", StatusCodes.UNAUTHORIZED)
+   }
+
+   // update
+   job = await Job.findOneAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true // run validators in model
+   })
+   // response
+   res.status(StatusCodes.OK).json({
+      success: true,
+      job
+   })
+}
 
