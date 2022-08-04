@@ -3,6 +3,7 @@ import jsonwebtoken from "jsonwebtoken"
 import CustomErrorMessage from "../classes/CustomErrorMessage.js"
 import User from "../models/User.js"
 
+// get token from auth in headers sent by client
 const authUserMiddleware = async (req, res, next) => {
     // get token in header passed by client (cookie token created in register and login)
     const authHeader = req.headers.authorization

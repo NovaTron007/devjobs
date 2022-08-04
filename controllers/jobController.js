@@ -102,3 +102,27 @@ export const updateJob = async(req, res) => {
    })
 }
 
+// @desc    Delete Job
+// @route   DELETE /api/v1/jobs/:id
+// @access  Private
+export const deleteJob = async (req, res) => {
+   // get job id
+   const job = await Job.findById(req.params.id)
+   // check if exists
+   if(!job) {
+      throw new CustomErrorMessage(`Job with id: ${req.params.id}`)
+   }
+   // check if owner
+   if(job.user.toString() !== req.user.userId) {
+      throw new CustomErrorMessage("Not authorised!", StatusCodes.UNAUTHORIZED)
+   }
+
+   // delete job
+   await job.remove()
+   
+   // response
+   res.status(StatusCodes.OK).json({
+      success: true, 
+      message:`Job deleted, id: ${req.params.id}` 
+   })
+}
