@@ -24,8 +24,7 @@ dotenv.config({path: "./config/config.env"})
 app.use(express.json())
 // upload files (import before route calls controller!!!)
 app.use(fileupload())
-// middleware
-app.use(errorHandlerMiddleware) // show js error messages
+
 // create cookie and store stuff in it
 app.use(cookieParser())
 // express static folder for file upload
@@ -35,6 +34,9 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/jobs", jobRouter)
 app.use("/api/v1/users", userRouter)
+
+// error middleware after routes
+app.use(errorHandlerMiddleware) // show js error messages
 
 // PORT constant env var
 const PORT = process.env.PORT 

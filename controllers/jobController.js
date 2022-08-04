@@ -58,6 +58,24 @@ export const getJobs = async (req, res) => {
 }
 
 
+// @desc    Get single job
+// @route   GET /api/v1/jobs/:id
+// @access  Public
+export const getSingleJob = async (req, res) => {
+   // get job id from url
+   const job = await Job.findById(req.params.id)
+   // if not exists
+   if(!job) {
+      throw new CustomErrorMessage(`Job with id: ${req.params.id} not found!`, StatusCodes.BAD_REQUEST)
+   }
+   // response: job exists
+   res.status(StatusCodes.OK).json({
+      success: true,
+      job: job
+   })
+
+}
+
 // @desc    Create Job
 // @route   POST /api/v1/jobs
 // @access  Private
@@ -110,7 +128,7 @@ export const deleteJob = async (req, res) => {
    const job = await Job.findById(req.params.id)
    // check if exists
    if(!job) {
-      throw new CustomErrorMessage(`Job with id: ${req.params.id}`)
+      throw new CustomErrorMessage(`Job with id: ${req.params.id}`, StatusCodes.BAD_REQUEST)
    }
    // check if owner
    if(job.user.toString() !== req.user.userId) {
