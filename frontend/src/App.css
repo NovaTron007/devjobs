@@ -1,0 +1,33 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+    --lightGrey: #f2f2f2;
+    --textGrey: #6e8098;
+    --darkGrey: #19202d;
+    --black: #121721;
+    --white: #ffffff;
+    --purple: #5964e0;
+    --lightPurple: #939bf4;
+}
+
+body {
+    background-color: var(--lightGrey);
+    font-family: Kumbh Sans,sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.filter-header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
