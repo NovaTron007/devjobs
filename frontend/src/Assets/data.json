@@ -1,0 +1,73 @@
+
+{
+    "jobsData": [
+        {
+            "title":"ReactJS developer",
+            "type":"full-time",
+            "details": {
+                "description": "ReactJS developer needed for banking project.",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["Maintain CMS", "Create resusable components"]
+            },
+            "city": "Hong Kong",
+            "country": "China",
+            "user": "Techland",
+            "userImage": "photo_62e811ea8e3dfb232009c44a_.svg"
+        },
+        {
+            "title":"PHP developer",
+            "type":"full-time",
+            "details": {
+                "description": "PHP developer needed for banking project.",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["Maintain CMS", "Create resusable components"]
+            },
+            "city": "Dublin",
+            "country": "Ireland",
+            "user": "Mozzie",
+            "userImage": "photo_62e811ea8e3dfb232009c44a_.svg"
+        },
+        {
+            "title":"C++ developer",
+            "type":"full-time",
+            "details": {
+                "description": "C++ developer needed for banking project.",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["Maintain CMS", "Create resusable components"]
+            },
+            "city": "Taipei",
+            "country": "China, Taiwan",
+            "user": "Sharp",
+            "userImage": "photo_62e811ea8e3dfb232009c44a_.svg"
+
+        },
+        {
+            "title":"NodeJS developer",
+            "type":"remote",
+            "details": {
+                "description": "NodeJS developer needed for banking project.",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["Maintain CMS", "Create resusable components"]
+            },
+            "city": "London",
+            "country": "UK",
+            "user": "City Sciences",
+            "userImage": "photo_62e811ea8e3dfb232009c44a_.svg"
+        },
+        {
+            "title":"Backend developer",
+            "type":"remote",
+            "details": {
+                "description": "Web developer needed for banking project.",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["Maintain CMS", "Create resusable components"]
+            },
+            "city": "Los Angeles",
+            "country": "USA",
+            "user": "BigO Technologies",
+            "userImage": "photo_62e811ea8e3dfb232009c44a_.svg"
+        }
+    ]
+}
+
+

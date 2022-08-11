@@ -12,7 +12,7 @@
 - npm install http-status-codes
 - npm install bcryptjs
 - npm install jsonwebtoken
-- npm install concurrently --save-dev (rem to npm install in client when pulled)
+- npm install concurrently --save-dev
 - npm install cors
 - npm install moment
 
@@ -20,3 +20,7 @@
 - create a db name in connection string as mongo connect copy/paste leaves it out 
 i.e mongodb+srv://<user>:<password>@devjobs-cluster.i3cwm.mongodb.net/<dbname>?retryWrites=true&w=majority
 
+# running app
+- cd root && npm install
+- cd frontend && npm install
+- After proxy set up in frontend pkg.json, and concurrently set up in server pkg.json, cd root & npm start

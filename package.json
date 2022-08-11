@@ -1,11 +1,13 @@
 {
   "name": "devjobs",
   "version": "1.0.0",
-  "type": "module",
   "description": "Devjobs application",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon server"
+    "server": "nodemon server --ignore frontend",
+    "frontend": "npm start --prefix frontend",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run frontend\""
   },
   "author": "Dwayne Man",
   "license": "MIT",
@@ -26,6 +28,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
     "mongoose": "^6.5.0",
+    "react-router-dom": "^6.3.0",
     "validator": "^13.7.0"
   }
 }

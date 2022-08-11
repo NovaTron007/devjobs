@@ -3,7 +3,7 @@ import bgImg from "../Images/bg-header.svg"
 
 const HeaderWrapper = styled.section`
     width: 100%;
-    min-height: 172px;
+    min-height: 162px;
     background-image: url(${bgImg});
     background-repeat: no-repeat; 
     background-size: cover; // whole width

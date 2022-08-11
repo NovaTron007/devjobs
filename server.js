@@ -27,7 +27,7 @@ app.use(fileupload())
 
 // create cookie and store stuff in it
 app.use(cookieParser())
-// express static folder for file upload
+// express static folder for file upload allow access in url (exclude "public" ie: localhost:5000/uploads/image.jpg
 app.use(express.static(path.join(__dirname, "public")))
 
 // Routes: prefix router then use router file for endpoint
