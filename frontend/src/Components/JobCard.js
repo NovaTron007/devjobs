@@ -3,7 +3,7 @@ import React from 'react'
 const JobCard = ({title, type, description, city, user, country, userImage }) => {
   return (
     <div className="job-card">
-        <div className="job-image-container">
+        <div className="job-icon-container">
             <img src={`http://localhost:5000/uploads/${userImage}`} alt="" />
         </div>
         <div className="job-info">
@@ -13,7 +13,7 @@ const JobCard = ({title, type, description, city, user, country, userImage }) =>
         </div>
         <p className="job-title">{title}</p>
         <p className="job-text">{user}</p>
-        <p className="job-country">{city}</p>
+        <p className="job-country mt-40">{city}</p>
     </div>
   )
 }

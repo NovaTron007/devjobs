@@ -1,38 +1,22 @@
 import { useState } from "react"
 import HeaderBg from "./Components/HeaderBg";
-import MainWrapper from "./Assets/StyledComponents/MainWrapper"
-import Header from "./Components/Header";
-import JobsWrapper from "./Assets/StyledComponents/JobsWrapper";
-import JobCard from "./Components/JobCard";
+import Navbar from "./Components/Navbar";
+import CompanyHeader from "./Components/CompanyHeader";
 import dataFile from "../src/Assets/data.json" // json file with data
+import CompanyContent from "./Components/CompanyContent";
+
+
 
 function App() {
   // destructure jobsData object in json file
   const [jobs, setJobs ] = useState(dataFile.jobsData)
 
-  return (
+  return (  
     <div className="App">
-        <HeaderBg />
-        <MainWrapper>
-          <Header />
-          <JobsWrapper>
-            { jobs.map((item, index) => {
-              const { title, type, description, city, country, user, userImage  } = item
-              return(
-                <JobCard 
-                  key={index}
-                  title={title}  
-                  type={type}
-                  description={description}
-                  city={city}
-                  country={country}
-                  user={user}
-                  userImage={userImage}
-                />
-              ) 
-            })}   
-          </JobsWrapper>
-        </MainWrapper>
+      <HeaderBg />
+      <Navbar />
+      <CompanyHeader />
+      <CompanyContent />
     </div>
   );
 }

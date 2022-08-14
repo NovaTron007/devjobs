@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ButtonWrapper = styled.button`
     display: block;
     min-width: 120px;
-    margin-right: 16px;
     font-size: 16px;
     font-weight: 700;
     color: var(--white);
@@ -16,6 +15,7 @@ const ButtonWrapper = styled.button`
 
     &:hover {
         background-color: var(--lightPurple);
+     
         cursor: pointer;
     }
 `

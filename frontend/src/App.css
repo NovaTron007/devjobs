@@ -25,11 +25,17 @@ body {
 h1 {
     font-size: 32px;
     font-weight: 700;
+    margin: 0;
 }
 
 p {
     margin: 0;
-    padding: 0;
+    line-height: 2em;
+}
+
+.text-purple {
+    color: var(--purple);
+    font-weight: 700;
 }
 
 .filter-header {
@@ -53,7 +59,7 @@ p {
     background-color: var(--offWhite);
 }
 
-.job-image-container {
+.job-icon-container {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -72,12 +78,32 @@ p {
     margin-bottom: 16px;
 }
 
+.job-content-info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
 .job-title {
     font-weight: 700;
     font-size: 20px;
     color: var(--black);
     padding: 0;
     margin-bottom: 16px;
+}
+
+.job-content-title {
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--black);
+    margin-bottom: 16px;
+}
+
+.job-content-requirement {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--black);
+    margin: 40px 0 30px;
 }
 
 .job-country {
@@ -87,6 +113,18 @@ p {
     margin-top: 40px;
 }
 
+.job-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-content-country {
+    font-size: 14px;
+    color: var(--purple);
+    font-weight: 700;
+    margin: 0;
+}
 .job-info span:after {
     content: "";
     display: -webkit-box;
@@ -97,4 +135,39 @@ p {
     height: 4px;
     border-radius: 4px;
     background-color: #6e8098;
+}
+
+.job-content-info span:after {
+    content: "";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 12px;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #6e8098;
+}
+
+.job-heading {
+    font-size: 16px;
+    margin: 40px 0 30px;
+}
+
+.company-header-column:nth-child(1){
+    flex:1;
+    max-width: 140px;
+}
+
+.company-header-column:nth-child(2) {
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.company-header-column:nth-child(3) {
+    display: flex;
+    justify-content: right;
+    flex: 1;
+    margin-right: 50px;
 }

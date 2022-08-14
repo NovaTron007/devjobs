@@ -1,9 +1,11 @@
 import React from 'react'
-import HeaderWrapper from "../Assets/StyledComponents/HeaderWrapper"
+import HeaderBgWrapper from "../Assets/StyledComponents/HeaderBgWrapper"
 
 const HeaderBg = () => {
   return (
-      <HeaderWrapper />
+    <>
+      <HeaderBgWrapper />
+    </>
   )
 }
 
