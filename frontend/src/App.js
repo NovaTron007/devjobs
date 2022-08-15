@@ -1,10 +1,10 @@
+import {BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState } from "react"
-import HeaderBg from "./Components/HeaderBg";
-import Navbar from "./Components/Navbar";
-import CompanyHeader from "./Components/CompanyHeader";
+import Header from "./Components/Header";
+import HomePage from "./Pages/HomePage"
+import JobPage from "./Pages/JobPage"
+import Error from "./Pages/Error"
 import dataFile from "../src/Assets/data.json" // json file with data
-import CompanyContent from "./Components/CompanyContent";
-
 
 
 function App() {
@@ -13,10 +13,14 @@ function App() {
 
   return (  
     <div className="App">
-      <HeaderBg />
-      <Navbar />
-      <CompanyHeader />
-      <CompanyContent />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/job/:id" element={<JobPage />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

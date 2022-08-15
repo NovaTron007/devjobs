@@ -4,7 +4,6 @@ const CompanyHeaderWrapper = styled.header`
     max-width: 778px;
     height: 140px;
     display: flex;
-    justify-content: center;
     align-items: center;
     margin:-40px auto 32px;
     background-color: var(--white);

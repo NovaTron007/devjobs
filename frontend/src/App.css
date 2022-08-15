@@ -157,12 +157,20 @@ p {
 .company-header-column:nth-child(1){
     flex:1;
     max-width: 140px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightPurple);
+    border-bottom-left-radius: 6px;
 }
 
 .company-header-column:nth-child(2) {
     display: flex;
-    align-items: center;
-    flex: 2;
+    align-items: start;
+    flex: 2 1;
+    padding: 20px 40px;
+    flex-direction: column;
 }
 
 .company-header-column:nth-child(3) {
@@ -170,4 +178,30 @@ p {
     justify-content: right;
     flex: 1;
     margin-right: 50px;
+}
+
+.company-header-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.footer-content {
+    width: 778px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:var(--white);
+}
+
+.footer-job-title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: var(--black);
+}
+.footer-job-type {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--textGrey);
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.nav`
-max-width: 1140px;
+max-width: 1160px;
 display: flex;
 justify-content: space-between;
 color: var(--white);
