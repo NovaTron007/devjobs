@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="footer-job-title">iOS Developer</div>
                 <div className="footer-job-type">full time</div>
             </div>
-            <Button text="hello" />
+            <Button text="Apply Now" />
         </div>
 
     </FooterWrapper>

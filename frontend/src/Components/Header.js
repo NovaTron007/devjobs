@@ -10,18 +10,19 @@ const Header = () => {
     <>
       <HeaderBgWrapper />
       <NavBarWrapper>
-        <Link to="/">
-          <h1 className="h1-header">devjobs</h1>
-        </Link>
-        <div className="dark-mode-container">
-          <img src={sunImg} width="18" height="18" alt="light-mode" />
-          <label className="switch">
-            <input type="checkbox" />
-            <span className="slider round"></span>
-          </label>
-          <img src={moonImg} width="12" height="12" alt="dark-mode" />
+        <div>
+          <Link to="/">
+            <h1 className="h1-header">devjobs</h1>
+          </Link>
+          <div className="dark-mode-container">
+            <img src={sunImg} width="18" height="18" alt="light-mode" />
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider round"></span>
+            </label>
+            <img src={moonImg} width="12" height="12" alt="dark-mode" />
+          </div>
         </div>
-
       </NavBarWrapper>
     </>
   )
