@@ -12,7 +12,6 @@ function App() {
   const [jobs, setJobs ] = useState(dataFile.jobsData)
 
   return (  
-    <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -21,7 +20,6 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
-    </div>
   );
 }
 

@@ -11,6 +11,7 @@ const ButtonWrapper = styled.button`
     padding: 16px 20px;
     outline: none;
     border: none;
+    letter-spacing: 1.3px;
     transition: background-color 0.2s ease-out;
 
     &:hover {

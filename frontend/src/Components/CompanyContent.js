@@ -16,7 +16,7 @@ const CompanyContent = () => {
           <p className="job-content-country">United Kingdom</p>
         </div>
         <div>
-          <Button>hello</Button>
+          <Button text="hello" />
         </div>
       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 

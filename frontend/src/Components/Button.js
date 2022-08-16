@@ -1,12 +1,19 @@
 import React from 'react'
 import ButtonWrapper from "../Assets/StyledComponents/ButtonWrapper"
+import { Link } from "react-router-dom"
 
-const Button = () => {
+const Button = ({text, link}) => {
+
+  // button with link or not
+  const Btn = link ? <Link to={link}>
+      <ButtonWrapper>{text}</ButtonWrapper></Link>
+    : <ButtonWrapper>{text}</ButtonWrapper>
+
+  // return btn
   return (
-    <ButtonWrapper>
-        Button
-    </ButtonWrapper>
+    Btn
   )
+
 }
 
 export default Button

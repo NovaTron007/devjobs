@@ -15,7 +15,7 @@ const CompanyHeader = ({jobsData}) => {
             <p>www.techland-example.com</p>
         </div>
         <div className="company-header-column">
-            <Button />
+            <Button text="hello" />
         </div>
     </CompanyHeaderWrapper>
   )
