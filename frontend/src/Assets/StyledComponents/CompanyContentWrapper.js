@@ -11,6 +11,9 @@ const CompanyContentWrapper = styled.section`
         padding: 48px;
         border-radius: 6px;
         background-color: var(--white);
+        @media(max-width: 500px) {
+            padding: 40px 24px;
+        }
     }
 
     .job-content-title {
@@ -18,6 +21,10 @@ const CompanyContentWrapper = styled.section`
         font-size: 28px;
         color: var(--black);
         margin-bottom: 16px;
+        @media (max-width: 500px) {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
     }
     
     .job-content-requirement {
@@ -31,13 +38,40 @@ const CompanyContentWrapper = styled.section`
         font-size: 14px;
         color: var(--purple);
         font-weight: 700;
-        margin-top: 40px;
+        @media (max-width: 500px) {
+            margin-top: 0;
+            margin-bottom: 54px;
+        }
     }
     
     .job-content-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 30px;
+        @media(max-width: 500px) {
+            flex-direction: column;
+            align-items: start;
+
+            div:nth-of-type(2) {
+                width: 100%;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    .job-info {
+        @media (max-width: 500px) {
+            margin-bottom: 5px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        button {
+            max-width: 100%;
+        }
     }
 `
 

@@ -17,9 +17,8 @@ const Home = () => {
                     // destruct
                     const { title, type, details, city, country, user, userImage } = item
                     return (
-                        <Link to="/job/1234">
+                        <Link to="/job/1234" key={index}>
                             <JobCard 
-                                key={index}
                                 title={title} 
                                 type={type} 
                                 details={details} 
