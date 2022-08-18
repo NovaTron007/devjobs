@@ -5,7 +5,7 @@ const FilterBarWrapper = styled.section`
     justify-content: center;
     height: 80px;
     padding: 0 20px;
-    margin: -50px 0px 30px;
+    margin: -50px 0px 80px;
 `
 
 export default FilterBarWrapper

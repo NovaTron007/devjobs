@@ -53,6 +53,13 @@ const JobsCardWrapper = styled.section`
         margin-bottom: 16px;
     }
 
+    .job-country {
+        font-size: 14px;
+        color: var(--purple);
+        font-weight: 700;
+        margin-top: 30px;
+    }
+
 `
 
 export default JobsCardWrapper
