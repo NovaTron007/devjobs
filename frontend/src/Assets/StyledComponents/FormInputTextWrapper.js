@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FormInputWrapper = styled.div`
+const FormInputTextWrapper = styled.div`
     justify-content: start;
     align-items: center;
     outline: none;
@@ -25,4 +25,4 @@ const FormInputWrapper = styled.div`
 
 `
 
-export default FormInputWrapper
+export default FormInputTextWrapper

@@ -1,10 +1,10 @@
 import React from 'react'
-import FormInputWrapper from "../Assets/StyledComponents/FormInputWrapper"
+import FormInputTextWrapper from "../Assets/StyledComponents/FormInputTextWrapper"
 
-const FormInput = ({type, name, value, placeholder, handleChange, icon}) => {
+const FormInputText = ({type, name, value, placeholder, handleChange, icon}) => {
 
   return (
-    <FormInputWrapper>
+    <FormInputTextWrapper>
         <span className="form-icon">{icon && <img src={icon} alt={`filter-${name}`} /> }</span>
         <input className="form-input"
             type={type}
@@ -13,9 +13,9 @@ const FormInput = ({type, name, value, placeholder, handleChange, icon}) => {
             placeholder={placeholder ?? ""}
             onChange={handleChange}
         />
-    </FormInputWrapper>
+    </FormInputTextWrapper>
 
   )
 }
 
-export default FormInput
+export default FormInputText

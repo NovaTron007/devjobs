@@ -21,6 +21,35 @@
     margin-bottom: 40px;
 }
 
+.form-icon {
+    width: 18px;
+    height: auto;
+}
+
+.form-input-select-row {
+    display: flex;
+    align-items: center;
+    margin: 10px 20px;
+}
+
+.form-input-select-icon {
+    margin-top: 5px;
+    width: 18px;
+    height: auto;
+}
+.form-input-select {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+option {
+    padding: 20px;
+    height: 40px;
+}
+
 body {
     background-color: var(--lightGrey);
     font-family: Kumbh Sans,sans-serif;
@@ -55,6 +84,23 @@ a:visited {
 .text-purple {
     color: var(--purple);
     font-weight: 700;
+}
+
+.filter-buttons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-buttons-wrapper > img:nth-of-type(1) {
+    display: flex;
+    margin: 0 30px;
+}
+
+@media(min-width: 830px) {
+    .filter-buttons-wrapper > img:nth-of-type(1) {
+        display: none;
+    }    
 }
 
 .job-info {

@@ -1,17 +1,19 @@
 import React from 'react'
 import FilterBarWrapper from "../Assets/StyledComponents/FilterBarWrapper"
 import FilterBarRow from "../Assets/StyledComponents/FilterBarRow"
-import FormInput from "./FormInput"
-import Checkbox from "./Checkbox"
-import Button from "./Button"
+import FormInputText from "./FormInputText"
+import FormInputCheckbox from "./FormInputCheckbox"
+import SearchButton from "./SearchButton"
 import searchImg from "../Assets/Images/search.svg"
 import locationImg from "../Assets/Images/location.svg"
+import Modal from "./Modal"
 
 const FilterBar = () => {
   return (
+    <>
     <FilterBarWrapper>
         <FilterBarRow>
-            <FormInput 
+            <FormInputText 
               type="text"
               name="search" 
               value=""
@@ -19,7 +21,7 @@ const FilterBar = () => {
               handleChange="search"
               icon={searchImg}
             />
-            <FormInput 
+            <FormInputText 
               type="text" 
               name="location" 
               value=""
@@ -27,13 +29,15 @@ const FilterBar = () => {
               handleChange="location"
               icon={locationImg}
             />            
-              <Checkbox 
+              <FormInputCheckbox 
                 checked={false}
                 labelText="Full time only"
               />
-              <Button text="Search"/>
+              <SearchButton text="Search"/>
         </FilterBarRow>
     </FilterBarWrapper>
+    <Modal />
+    </>
   )
 }
 

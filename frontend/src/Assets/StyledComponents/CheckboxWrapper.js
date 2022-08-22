@@ -3,7 +3,6 @@ import styled from "styled-components"
 const CheckBoxWrapper = styled.div`
 
     display: flex;
-    justify-content: center;
     cursor: pointer;
 
     /* The checkbox-container */
