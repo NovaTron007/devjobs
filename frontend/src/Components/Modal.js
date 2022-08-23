@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react"
+import { useRef } from "react"
 import ModalWrapper from "../Assets/StyledComponents/ModalWrapper"
 import FormInputCheckbox from "./FormInputCheckbox"
 import FormInputSelect from "./FormInputSelect"
@@ -6,15 +6,14 @@ import Button from "./Button"
 import locationImg from "../Assets/Images/location.svg"
 
 
-const Modal = () => {
-    const [showModal, setShowModal] = useState(true)
+const Modal = ({showModal, setShowModalCb}) => {
+    // modal ref
     const modalContainerRef = useRef(null)
 
-
-    // show modal
+    // show modal: if ref is set and e.target is not modal then close
     const handleModal = (e) => {
         if (modalContainerRef.current && !modalContainerRef.current.contains(e.target)) {
-            setShowModal(false)
+            setShowModalCb(!showModal)
         }
     }
 
@@ -42,13 +41,6 @@ const Modal = () => {
             </ModalWrapper>
         )
     }
-
-    if(!showModal) {
-        return (
-            <></>
-        )
-    }
-
 }
 
 export default Modal
