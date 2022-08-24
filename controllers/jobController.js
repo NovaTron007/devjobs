@@ -46,8 +46,8 @@ export const getJobs = async (req, res) => {
       result = result.sort("-title")
    }
 
-   // jobs with result
-   const jobs = await result
+   // jobs with result, and populate createdBy (user relationship in job with specific info only)
+   const jobs = await result.populate("user", "photo")
 
    // response
    res.status(StatusCodes.OK).json({
@@ -80,7 +80,7 @@ export const getSingleJob = async (req, res) => {
 // @route   POST /api/v1/jobs
 // @access  Private
 export const createJob = async (req, res) => {
-    // append req.user from req.user.userId set in authUserMiddleware to req.body
+    // append req.user from req.user.userId set in authUserMiddleware to req.body (we need to add user to job)
     req.body.user = req.user.userId
     // create job
     const job = await Job.create(req.body)

@@ -1,19 +1,20 @@
-import React from 'react'
+import moment from "moment"
 
-const JobCard = ({title, type, description, city, user, country, userImage }) => {
+const JobCard = ({id, title, type, city, company, country, createdAt, photo }) => {
+
   return (
     <div className="job-card">
         <div className="job-icon-container">
-            <img src={`http://localhost:5000/uploads/${userImage}`} alt="" />
+            <img src={`http://localhost:5000/uploads/${photo}`} alt="" />
         </div>
         <div className="job-info">
-            <p>2d ago </p> 
+            <p>{moment(createdAt).format("MMM Do YYYY")}</p> 
             <span></span> 
             <p>{type}</p>
         </div>
         <p className="job-title">{title}</p>
-        <p className="job-text">{user}</p>
-        <p className="job-country mt-40">{city}</p>
+        <p className="job-text">{company}</p>
+        <p className="job-country mt-40">{country}, {city}</p>
     </div>
   )
 }

@@ -27,13 +27,6 @@ const UserSchema = new mongoose.Schema({
         minLength: 6,
         select: false // don't allow select query on password
     },
-    companyName: {
-        type: String,
-        required: [true, "Company name is required"],
-        minLength: 3,
-        maxLength: 20,
-        trim: true
-    },
     photo: {
         type: String,
         default: "no-photo.jpg"

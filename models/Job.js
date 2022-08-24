@@ -1,6 +1,13 @@
 import mongoose from "mongoose"
 
 const JobSchema = new mongoose.Schema({
+    company: {
+        type: String,
+        required: [true, "Company is required"],
+        minLength: 1,
+        maxLength: 50,
+        trim: true
+    },
     title: {
         type: String,
         required: [true, "Job is required"],

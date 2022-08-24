@@ -70,6 +70,7 @@ p {
 }
 
 a {
+    color: unset;
     text-decoration: none;
 }
 
@@ -126,4 +127,11 @@ a:visited {
 .job-heading {
     font-size: 16px;
     margin: 40px 0 30px;
+}
+
+.container-center {
+    margin: 0 auto;
+    max-width: 1180px;
+    text-align: center;
+    padding: 40px;
 }

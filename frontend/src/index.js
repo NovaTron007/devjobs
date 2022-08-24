@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom/client';
 import "normalize.css"
 import "./App.css"
 import App from './App';
+// redux provider and our slice
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { apiSlice } from "./Features/Api/apiSlice";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ApiProvider api={apiSlice}>
+      <App />
+    </ApiProvider>
   </React.StrictMode>
 );
