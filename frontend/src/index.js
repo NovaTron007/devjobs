@@ -5,12 +5,12 @@ import "./App.css"
 import App from './App';
 // redux provider and our slice
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import { apiSlice } from "./Features/Api/apiSlice";
+import { jobsSlice } from "./Features/Api/jobsSlice";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApiProvider api={apiSlice}>
+    <ApiProvider api={jobsSlice}>
       <App />
     </ApiProvider>
   </React.StrictMode>

@@ -8,10 +8,10 @@ import User from "../models/User.js"
 // @access  Public
 export const register = async (req, res) => {
     // get body
-    const { userName, companyName, email, password } = req.body
+    const { userName, email, password } = req.body
     
     // use custom error class: add message to js error object
-    if(!userName || !companyName || !email || !password) {
+    if(!userName || !email || !password) {
         throw new CustomErrorMessage("Please complete all fields ", StatusCodes.BAD_REQUEST)
     }
 
@@ -24,7 +24,7 @@ export const register = async (req, res) => {
     }
 
     // create user
-    const user = await User.create({userName, companyName, email, password})
+    const user = await User.create({userName, email, password})
 
     // create jwt and create cookie and send response
     sendTokenResponse(user, StatusCodes.CREATED, res)

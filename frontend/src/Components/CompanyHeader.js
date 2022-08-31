@@ -2,18 +2,20 @@ import React from 'react'
 import CompanyHeaderWrapper from '../Assets/StyledComponents/CompanyHeaderWrapper'
 import Button from './Button'
 
-const CompanyHeader = ({jobsData}) => {
+const CompanyHeader = ({company, website, photo}) => {
+
+  const companyPhoto = photo === "no-photo.jpg" ? <h3 style={{color: "#fff"}}>No Photo</h3> : <img src={`http://localhost:5000/uploads/${photo}`} alt={`devjobs-${photo}`} />;
   return (
     <CompanyHeaderWrapper>
       <div className="company-header">
           <div className="company-header-column">
-              <img src={`http://localhost:5000/uploads/${jobsData[0].userImage}`} alt="" />
+              {companyPhoto}
           </div>
           <div className="company-header-column">
               <h1 className="company-header-title">
-                Techland
+                {company}
               </h1>
-              <p>www.techland-example.com</p>
+              <p>{website}</p>
           </div>
           <div className="company-header-column">
               <Button text="Company Site" />

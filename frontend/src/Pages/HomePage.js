@@ -5,21 +5,14 @@ import Button from "../Components/Button"
 import FilterBar from "../Components/FilterBar"
 
 // slices
-import { useGetJobsQuery } from "../Features/Api/apiSlice"
+import { useGetJobsQuery } from "../Features/Api/jobsSlice"
 import Loader from "../Components/Loader"
 
 const Home = () => {
     
     // get data from slice
-    const {
-        data,
-        isLoading,
-        isSuccess,
-        isError,
-        error
-    } = useGetJobsQuery()
+    const { data, isLoading, isSuccess, isError, error } = useGetJobsQuery()
     
-    console.log("jobs: ", data)
     // loading
     if(isLoading){
         return <div className="container-center"><p><Loader /></p></div>
@@ -32,6 +25,7 @@ const Home = () => {
     if(data.jobs.length === 0) {
         return <div className="container-center"><h2>There are currently no jobs!</h2></div>
     }
+
     // success
     if(isSuccess) {
         return(
@@ -42,7 +36,7 @@ const Home = () => {
                     {data.jobs.map((item, index) => {
                         // destruct each item object and nested user 
                         const { _id: id , company, title, type, details, city, country, createdAt, user: { photo }  } = item
-                        console.log("userImage: ", photo)
+                        console.log("photo: ", photo)
                         return (
                             <Link to={`/job/${id}`} key={index}>
                                 <JobCard 

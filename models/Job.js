@@ -8,6 +8,13 @@ const JobSchema = new mongoose.Schema({
         maxLength: 50,
         trim: true
     },
+    website: {
+        type: String,
+        required: [true, "Website is required"],
+        minLength: 5,
+        maxLength: 50,
+        trim: true
+    },
     title: {
         type: String,
         required: [true, "Job is required"],
@@ -25,7 +32,7 @@ const JobSchema = new mongoose.Schema({
             required: [true, "Description is required"],
             trim: true,
             minLength: 5,
-            maxLength: 100
+            maxLength: 500
         },
         requirements:{
             type: String,

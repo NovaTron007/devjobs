@@ -1,0 +1,100 @@
+{
+  "usersData": [
+    {
+        "_id":"62ebd73af3baf761e050c5bc",
+        "userName":"john",
+        "email":"john@gmail.com",
+        "password":"123456",
+        "photo": "photo_62ebd73af3baf761e050c5bc_.svg",
+        "color": "purple"
+    },
+    {
+        "_id":"630f7f3c6299614c820382bf",
+        "userName":"joe",
+        "email":"joe@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7f3c6299614c820382bf_.svg",
+        "color": "green"
+    },
+    {
+        "_id":"630f7f4a6299614c820382c2",
+        "userName":"sara",
+        "email":"sara@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7f4a6299614c820382c2_.svg",
+        "color": "cyan"
+    },
+    {
+        "_id":"630f7f7f6299614c820382cb",
+        "userName":"eric",
+        "email":"eric@gmail.com",
+        "password":"123456",
+        "photo":"photo_630f7f7f6299614c820382cb_.svg",
+        "color": "orange"
+    },
+    {
+        "_id":"630f7f036299614c820382bc",
+        "userName":"crystal",
+        "email":"crystal@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7f036299614c820382bc_.svg",
+        "color": "green"
+    },
+    {
+        "_id":"630f7f596299614c820382c5",
+        "userName":"jane",
+        "email":"jane@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7f596299614c820382c5_.svg",
+        "color": "purple"
+    },
+    {
+        "_id":"630f7f656299614c820382c8",
+        "userName":"dave",
+        "email":"dave@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7f656299614c820382c8_.svg",
+        "color": "yellow"
+    },
+    {
+        "_id":"630f7f906299614c820382ce",
+        "userName":"rick",
+        "email":"rick@gmail.com",
+        "password":"123456",
+        "photo":"photo_630f7f906299614c820382ce_.svg",
+        "color": "navy"
+    },
+    {
+        "_id":"630f7fad6299614c820382d1",
+        "userName":"Laura",
+        "email":"laura@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7fad6299614c820382d1_.svg",
+        "color": "pink"
+    },
+    {
+        "_id":"630f7fb96299614c820382d4",
+        "userName":"Henry",
+        "email":"Henry@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7fb96299614c820382d4_.svg",
+        "color": "turquoise"
+    },
+    {
+        "_id":"630f7fc66299614c820382d7",
+        "userName":"Icarus",
+        "email":"icarus@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f7fc66299614c820382d7_.svg",
+        "color": "blue"
+    },
+    {
+        "_id":"630f781d6299614c82038294",
+        "userName":"William",
+        "email":"william@gmail.com",
+        "password":"123456",
+        "photo": "photo_630f781d6299614c82038294_.svg",
+        "color": "teal"
+    }
+  ]   
+}

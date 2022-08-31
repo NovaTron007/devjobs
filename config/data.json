@@ -2,76 +2,186 @@
 {
     "jobsData": [
         {
-            "company": "Techland",
+            "company": "BeGood Ltd.",
+            "website": "www.begood-ltd-example.com",
             "title":"ReactJS developer",
             "type":"full-time",
             "details": {
-                "description": "ReactJS developer needed for banking project.",
+                "description": "ReactJS developer needed for IOT project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
                 "requirements": "BSc. in Computer Science.",
-                "tasks": ["Maintain CMS", "Create resusable components"]
+                "tasks": ["Create resusable components", "Develop user interfaces", "Work with backend developers to call api's"]
             },
             "city": "Hong Kong",
             "country": "China",
             "user": "62ebd73af3baf761e050c5bc",
-            "createdAt": "2021-07-26T12:40:06Z"
+            "createdAt": "2021-01-26T12:40:06Z"
         },
         {
-            "company": "Mozzie",
+            "company": "BeansDev Technologies",
+            "website": "www.beansdev-example.com",
             "title":"PHP developer",
             "type":"full-time",
             "details": {
-                "description": "PHP developer needed for banking project.",
+                "description": "PHP developer needed for ecommerce projects. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
                 "requirements": "BSc. in Computer Science.",
-                "tasks": ["Maintain CMS", "Create resusable components"]
+                "tasks": ["Create Laravel applications", "Wordpress CMS", "Magento Ecommerce"]
             },
             "city": "Dublin",
             "country": "Ireland",
-            "user": "62ebd73af3baf761e050c5bc",
-            "createdAt": "2021-07-26T12:40:06Z"
+            "user": "630f781d6299614c82038294",
+            "createdAt": "2021-02-26T12:40:06Z"
         },
         {
-            "company": "Sharp",
+            "company": "CrewOne Ltd.",
+            "website": "www.crewone-example.com",
             "title":"C++ developer",
             "type":"full-time",
             "details": {
-                "description": "C++ developer needed for banking project.",
+                "description": "C++ developer needed for banking projects. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
                 "requirements": "BSc. in Computer Science.",
-                "tasks": ["Maintain CMS", "Create resusable components"]
+                "tasks": ["API development", "Backend development", "Software Desktop Applications"]
             },
             "city": "Taipei",
             "country": "China",
-            "user": "62ebd73af3baf761e050c5bc",
-            "createdAt": "2021-07-26T12:40:06Z"
+            "user": "630f7f036299614c820382bc",
+            "createdAt": "2021-03-26T12:40:06Z"
 
         },
         {
-            "company": "City Sciences",
+            "company": "CrowdFund Inc.",
+            "website": "www.crowdfund-example.com",
             "title":"NodeJS developer",
             "type":"remote",
             "details": {
-                "description": "NodeJS developer needed for banking project.",
+                "description": "NodeJS developer needed for banking projects. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
                 "requirements": "BSc. in Computer Science.",
-                "tasks": ["Maintain CMS", "Create resusable components"]
+                "tasks": ["API Design", "MongoDB development"]
             },
             "city": "London",
             "country": "UK",
-            "user": "62ebd73af3baf761e050c5bc",
-            "createdAt": "2021-07-26T12:40:06Z"
+            "user": "630f7f3c6299614c820382bf",
+            "createdAt": "2021-04-26T12:40:06Z"
         },
         {
-            "company": "BigO Technologies",
+            "company": "Coaxial Industries",
+            "website": "www.coaxial-example.com",
             "title":"Backend developer",
             "type":"remote",
             "details": {
-                "description": "Web developer needed for banking project.",
+                "description": "Web developer needed for banking projects. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
                 "requirements": "BSc. in Computer Science.",
-                "tasks": ["Maintain CMS", "Create resusable components"]
+                "tasks": ["Algorithmic Programming", "DevOps", "Swift mobile applications", "React native mobile applications", "API Design"]
             },
             "city": "Los Angeles",
             "country": "USA",
-            "user": "62ebd73af3baf761e050c5bc",
+            "user": "630f7f4a6299614c820382c2",
+            "createdAt": "2021-05-26T12:40:06Z"
+        },
+        {
+            "company": "MinersData Ltd.",
+            "website": "www.minersdata-example.com",
+            "title":"Data Scientist",
+            "type":"full-time",
+            "details": {
+                "description": "Data Scientist needed for crypto projects. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["SQL", "Data mining", "Create reports to show various data"]
+            },
+            "city": "Los Angeles",
+            "country": "USA",
+            "user": "630f7f596299614c820382c5",
+            "createdAt": "2021-06-26T12:40:06Z"
+        },
+        {
+            "company": "eContract Ltd.",
+            "website": "www.econtract-example.com",
+            "title":"Solidity Programmer",
+            "type":"full-time",
+            "details": {
+                "description": "Solidity Programmer for smart contracts.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["Solidity Programmer", "Web3.0", "SQL", "NodeJS"]
+            },
+            "city": "Stokholm",
+            "country": "Sweden",
+            "user": "630f7f656299614c820382c8",
             "createdAt": "2021-07-26T12:40:06Z"
-        }
+        },
+        {
+            "company": "Devise Ltd.",
+            "website": "www.devise-example.com",
+            "title":"Mobile Apps Developer",
+            "type":"full-time",
+            "details": {
+                "description": "Mobile Apps Developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["React native", "Flutter", "Swift"]
+            },
+            "city": "Paris",
+            "country": "France",
+            "user": "630f7f7f6299614c820382cb",
+            "createdAt": "2021-08-26T12:40:06Z"
+        },
+        {
+            "company": "Pomodoro I.T",
+            "website": "www.pomodoro-example.com",
+            "title":"Mobile Apps Developer",
+            "type":"full-time",
+            "details": {
+                "description": "Mobile Apps Developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["React native", "Flutter", "Swift"]
+            },
+            "city": "Hong Kong",
+            "country": "China",
+            "user": "630f7f906299614c820382ce",
+            "createdAt": "2021-09-26T12:40:06Z"
+        },
+        {
+            "company": "Scoot Ltd.",
+            "website": "www.scootltd-example.com",
+            "title":"Mobile Apps Developer",
+            "type":"full-time",
+            "details": {
+                "description": "Mobile Apps Developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["React native", "Flutter", "Swift"]
+            },
+            "city": "Hong Kong",
+            "country": "China",
+            "user": "630f7fad6299614c820382d1",
+            "createdAt": "2021-10-26T12:40:06Z"
+        },
+        {
+            "company": "Timothy MTech",
+            "website": "www.timothymtech-example.com",
+            "title":"Mobile Apps Developer",
+            "type":"full-time",
+            "details": {
+                "description": "Mobile Apps Developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["React native", "Flutter", "Swift"]
+            },
+            "city": "Hong Kong",
+            "country": "China",
+            "user": "630f7fb96299614c820382d4",
+            "createdAt": "2021-11-26T12:40:06Z"
+        },
+        {
+            "company": "Vector Industries Ltd.",
+            "website": "www.vector-example.com",
+            "title":"Solidity Programmer",
+            "type":"full-time",
+            "details": {
+                "description": "Mobile Apps Developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores voluptas repudiandae veritatis distinctio totam deserunt, voluptate quasi et saepe harum possimus unde vitae debitis eligendi magnam vel nostrum rerum?",
+                "requirements": "BSc. in Computer Science.",
+                "tasks": ["React native", "Flutter", "Swift"]
+            },
+            "city": "Hong Kong",
+            "country": "China",
+            "user": "630f7fc66299614c820382d7",
+            "createdAt": "2021-12-26T12:40:06Z"
+        }                                         
     ]
 }
 
