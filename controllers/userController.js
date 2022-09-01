@@ -7,10 +7,11 @@ import path from "path" // node util to access file system
 // @desc    Upload Photo
 // @route   GET /api/v1/users
 // @access  Private
-export const getUsers = async (res) => {
+export const getUsers = async (req, res) => {
     // get all users
     const users = await User.find()
     // response
+    console.log("req: ", req.cookies)
     res.status(StatusCodes.OK).json({
         users
     })
