@@ -47,7 +47,7 @@ export const getJobs = async (req, res) => {
    }
 
    // jobs with result, and populate createdBy (user relationship in job with specific info only)
-   const jobs = await result.populate("user", "photo")
+   const jobs = await result.populate("user", "photo color")
 
    // response
    res.status(StatusCodes.OK).json({
@@ -63,7 +63,7 @@ export const getJobs = async (req, res) => {
 // @access  Public
 export const getSingleJob = async (req, res) => {
    // get job id from url
-   const job = await Job.findById(req.params.id).populate("user", "photo")
+   const job = await Job.findById(req.params.id).populate("user", "photo color")
    // if not exists
    if(!job) {
       throw new CustomErrorMessage(`Job with id: ${req.params.id} not found!`, StatusCodes.BAD_REQUEST)

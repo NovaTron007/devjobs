@@ -4,12 +4,9 @@ import Footer from "../Components/Footer"
 import { useParams } from "react-router-dom"
 import { useGetSingleJobQuery } from "../Features/Api/jobsSlice"
 import Loader from "../Components/Loader"
-// import dataFile from "../Assets/data.json" // json file with data
 
 
 const JobPage = () => {
-
-  // const { jobsData } = dataFile // data json file
   // get job id from url
   const { id } = useParams()
   // get single job using slice
@@ -32,7 +29,7 @@ const JobPage = () => {
   if(isSuccess) {
     return (
       <>
-          <CompanyHeader company={data.job.company} website={data.job.website} photo={data.job.user.photo} jobId={id} />
+          <CompanyHeader company={data.job.company} website={data.job.website} photo={data.job.user.photo} color={data.job.user.color} />
           <CompanyContent job={data.job} />
           <Footer title={data.job.title} type={data.job.type} />
       </>

@@ -32,7 +32,7 @@ const CompanyHeaderWrapper = styled.header`
         max-width: 140px; // set width of column with pic
         height: 100%;
         padding: 30px;
-        background-color: #2F4FC6;
+        background-color: ${props => props.color};
         border-bottom-left-radius: 6px;
 
         img {

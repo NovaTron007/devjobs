@@ -14,7 +14,7 @@
         "email":"joe@gmail.com",
         "password":"123456",
         "photo": "photo_630f7f3c6299614c820382bf_.svg",
-        "color": "green"
+        "color": "orange"
     },
     {
         "_id":"630f7f4a6299614c820382c2",
@@ -22,7 +22,7 @@
         "email":"sara@gmail.com",
         "password":"123456",
         "photo": "photo_630f7f4a6299614c820382c2_.svg",
-        "color": "cyan"
+        "color": "red"
     },
     {
         "_id":"630f7f7f6299614c820382cb",
@@ -46,7 +46,7 @@
         "email":"jane@gmail.com",
         "password":"123456",
         "photo": "photo_630f7f596299614c820382c5_.svg",
-        "color": "purple"
+        "color": "sand"
     },
     {
         "_id":"630f7f656299614c820382c8",
@@ -54,7 +54,7 @@
         "email":"dave@gmail.com",
         "password":"123456",
         "photo": "photo_630f7f656299614c820382c8_.svg",
-        "color": "yellow"
+        "color": "navy"
     },
     {
         "_id":"630f7f906299614c820382ce",
@@ -94,7 +94,7 @@
         "email":"william@gmail.com",
         "password":"123456",
         "photo": "photo_630f781d6299614c82038294_.svg",
-        "color": "teal"
+        "color": "beige"
     }
   ]   
 }

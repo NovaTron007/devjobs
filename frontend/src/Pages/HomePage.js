@@ -35,8 +35,8 @@ const Home = () => {
                 <div className="jobs-grid">
                     {data.jobs.map((item, index) => {
                         // destruct each item object and nested user 
-                        const { _id: id , company, title, type, details, city, country, createdAt, user: { photo }  } = item
-                        console.log("photo: ", photo)
+                        const { _id: id , company, title, type, details, city, country, createdAt, user: { photo }, user: { color }  } = item
+                        
                         return (
                             <Link to={`/job/${id}`} key={index}>
                                 <JobCard 
@@ -49,6 +49,7 @@ const Home = () => {
                                     company={company}
                                     createdAt={createdAt}
                                     photo={photo}
+                                    color={color}
                                 />
                             </Link>
                         )})}

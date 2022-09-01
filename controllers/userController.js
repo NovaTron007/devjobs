@@ -5,6 +5,19 @@ import path from "path" // node util to access file system
 
 
 // @desc    Upload Photo
+// @route   GET /api/v1/users
+// @access  Private
+export const getUsers = async (res) => {
+    // get all users
+    const users = await User.find()
+    // response
+    res.status(StatusCodes.OK).json({
+        users
+    })
+}
+
+
+// @desc    Upload Photo
 // @route   PUT /api/v1/users/:id/photo
 // @access  Private
 export const uploadPhoto = async ( req, res) => {
