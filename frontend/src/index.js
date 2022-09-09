@@ -4,14 +4,14 @@ import "normalize.css"
 import "./App.css"
 import App from './App';
 // redux provider and our slice
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import { jobsSlice } from "./Features/Api/jobsSlice";
+import { Provider } from "react-redux";
+import { store } from "./Store/store"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApiProvider api={jobsSlice}>
+    <Provider store={store}>
       <App />
-    </ApiProvider>
+    </Provider>
   </React.StrictMode>
 );

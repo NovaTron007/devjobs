@@ -35,9 +35,25 @@ const ModalWrapper = styled.section`
 
         .modal-search-button-wrapper {
             padding: 5px 20px 20px;
-
+            
             button {
+                display: block;
                 width: 100%;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--white);
+                background-color: var(--purple);
+                border-radius: 5px;
+                padding: 16px 20px;
+                outline: none;
+                border: none;
+                letter-spacing: 1.3px;
+                transition: background-color 0.2s ease-out;
+
+                &:hover {
+                    background-color: var(--lightPurple);
+                    cursor: pointer;
+                }
             }
         }
     }

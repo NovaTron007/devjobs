@@ -3,10 +3,10 @@ import JobsCardWrapper from "../Assets/StyledComponents/JobsCardWrapper"
 import JobCard from "../Components/JobCard"
 import Button from "../Components/Button"
 import FilterBar from "../Components/FilterBar"
+import Loader from "../Components/Loader"
 
 // slices
-import { useGetJobsQuery } from "../Features/Api/jobsSlice"
-import Loader from "../Components/Loader"
+import { useGetJobsQuery } from "../Store/Api/apiSlice"
 
 const Home = () => {
     
@@ -15,7 +15,7 @@ const Home = () => {
     
     // loading
     if(isLoading){
-        return <div className="container-center"><p><Loader /></p></div>
+        return <div className="container-center"><Loader /></div>
     }
     // error
     if(isError) {

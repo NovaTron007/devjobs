@@ -34,8 +34,8 @@ const CompanyContent = (props) => {
 
         <div className="job-content-requirement">Tasks</div>
         {/* map to return array, for each return nothing */}
-        <p>{details.tasks.map((item) => 
-          <li>{item}</li>
+        <p>{details.tasks.map((item, index) => 
+          <li key={index}>{item}</li>
         )}</p>
   
       </div>

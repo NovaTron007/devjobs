@@ -8,7 +8,8 @@ import Job from "../models/Job.js"
 // @access  Public
 export const getJobs = async (req, res) => {
    // Get query params: in url ie: /jobs?type=full-time&search=frontend)
-   const { type, search, sort, country } = req.query
+   const { type, search, sort, location } = req.query
+   console.log("getJobs req.query: ", req.query)
 
    // build up query obj document for model, for filtering/retrieving data from db
    const queryObj = {}
@@ -22,8 +23,8 @@ export const getJobs = async (req, res) => {
       // mongodb regex: where the text exists in general (not exact match)
       queryObj.title = {$regex: search, $options: "i"} // term, case insensitive
    }
-   if(country) {
-      queryObj.country = {$regex: country, $options: "i" } // term, case insensitive
+   if(location) {
+      queryObj.location = {$regex: location, $options: "i" } // term, case insensitive
    }
 
    // no await: prepare result first with query object before request to db

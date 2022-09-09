@@ -2,7 +2,7 @@ import CompanyHeader from "../Components/CompanyHeader"
 import CompanyContent from "../Components/CompanyContent"
 import Footer from "../Components/Footer"
 import { useParams } from "react-router-dom"
-import { useGetSingleJobQuery } from "../Features/Api/jobsSlice"
+import { useGetSingleJobQuery } from "../Store/Api/apiSlice"
 import Loader from "../Components/Loader"
 
 
@@ -16,7 +16,7 @@ const JobPage = () => {
 
   // loading
   if(isLoading){
-    return <div className="container-center"><p><Loader /></p></div>
+    return <div className="container-center"><Loader /></div>
   }
   // error
   if(isError) {

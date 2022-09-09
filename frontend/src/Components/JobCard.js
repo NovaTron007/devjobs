@@ -3,7 +3,6 @@ import moment from "moment"
 const JobCard = ({id, title, type, city, company, country, createdAt, photo, color }) => {
   
   const companyPhoto = photo === "no-photo.jpg" ? <span style={{color: "#fff", fontSize: "10px"}}>No Photo</span> : <img src={`http://localhost:5000/uploads/${photo}`} alt={`devjobs-${photo}`} />;
-  console.log("color: ", color)
   return (
     <div className="job-card">
         <div className="job-icon-container" style={ {backgroundColor: `${color}` }}>

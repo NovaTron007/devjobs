@@ -4,9 +4,9 @@ import CustomErrorMessage from "../classes/CustomErrorMessage.js"
 import path from "path" // node util to access file system
 
 
-// @desc    Upload Photo
+// @desc    Get Users
 // @route   GET /api/v1/users
-// @access  Private
+// @access  Public
 export const getUsers = async (req, res) => {
     // get all users
     const users = await User.find()
@@ -21,7 +21,7 @@ export const getUsers = async (req, res) => {
 // @desc    Upload Photo
 // @route   PUT /api/v1/users/:id/photo
 // @access  Private
-export const uploadPhoto = async ( req, res) => {
+export const uploadPhoto = async (req, res) => {
     // find user: get user to upload photo for 
     const user = await User.findById(req.params.id)
 
