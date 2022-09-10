@@ -8,100 +8,94 @@ import SearchButton from "./SearchButton"
 import searchImg from "../Assets/Images/search.svg"
 import locationImg from "../Assets/Images/location.svg"
 import Modal from "./Modal"
+// store
 import { useGetJobsQuery } from "../Store/Api/apiSlice"
 import { useSelector, useDispatch } from "react-redux"
-import { addFilters } from "../Store/reducer"
+import { addFilters } from "../Store/filterSlice"
 
 const FilterBar = () => {
-  // get api data
+  // get data from api
   const { data } = useGetJobsQuery()
+  // dispatch action
   const dispatch = useDispatch()
+  // get filters state from store
+  const { filters } = useSelector((state) => state.filters)
 
   // get countries in data using Set
   const createCountryList = () => {
+    // avoid creating duplicate values using set
     let countryListSet = new Set()
+    // loop object
     data.jobs.forEach(item => {
       countryListSet.add(item.country)
     });
+    // return object to array
     return Array.from(countryListSet)
   }
 
   // set countriesListSet into countryList
   const [countryList] = useState(() => createCountryList())
 
-  // state for modal
+  // show modal
   const [showModal, setShowModal] = useState(false)
 
-  // form input values
-  const initialState = {
-    search: "",
-    location: "",
-    fulltime: true
-  }
 
-  // filter state with form object and values
-  const [formFilters, setFormFilters] = useState(initialState)
-
-  // get values for filter form
+  // set filter values from filter form inputs
   const handleInput = (e) => {
+    // update checkbox: use state for controlled checkbox
+    console.log("e.target.name: ", e.target.name)
+    console.log("filters:" , filters)
     if(e.target.name === "fulltime") {
-      let fulltime = e.target.checked ? true : false
-      setFormFilters({...formFilters, [e.target.name]: fulltime})
+      dispatch(addFilters({...filters, [e.target.name]: !filters.fulltime}))
     } else {
-      setFormFilters({...formFilters, [e.target.name]: e.target.value})
+      dispatch(addFilters({ ...filters, [e.target.name]: e.target.value }))
     }
-    dispatch(addFilters(formFilters))
   }
 
-  // submit object
-  const handleSubmit = () => {
-    console.log("handleSubmit: ", formFilters)
+  // submit object to api
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("handleSubmit: ", filters)
   }
-  
+
 
   return (
     <>
-      <FilterBarWrapper>
+      <form>
+        <FilterBarWrapper>
           <FilterBarRow>
-              <FormInputText 
-                name="search" 
-                value={formFilters.search}
-                placeholder="Filter by title, companies"
-                handleChange={handleInput}
-                icon={searchImg}
-              />
-              <FormInputSelect 
-                name="location"
-                value={formFilters.location}
-                list={["", ...countryList]}
-                placeholder="Filter by location"
-                handleChange={handleInput}
-                icon={locationImg}
-              />            
-              <FormInputCheckbox
-                name="fulltime"
-                isFulltime={formFilters.fulltime}
-                labelText="Full time only"
-                handleChange={handleInput}
-              />
-              <button onClick={() => {dispatch(addFilters(formFilters)); setFormFilters({})}}>clear me</button>
-              <SearchButton text="Search" showModal={showModal} setShowModalCb={setShowModal} handleSubmitCb={handleSubmit} />
+            <FormInputText
+              name="search"
+              value={filters && filters.search}
+              placeholder="Filter by title, companies"
+              handleChange={handleInput}
+              icon={searchImg}
+            />
+            <FormInputSelect
+              name="location"
+              value={filters && filters.location}
+              list={["", ...countryList]}
+              placeholder="Filter by location"
+              handleChange={handleInput}
+              icon={locationImg}
+            />
+            <FormInputCheckbox
+              name="fulltime"
+              value="fulltime"
+              isChecked={filters && filters.fulltime}
+              labelText="Full time only"
+              handleChange={handleInput}
+            />
+            {/* search and mobile filter button */}
+            <SearchButton text="Search" showModal={showModal} setShowModalCb={setShowModal} handleSubmitCb={handleSubmit} />
           </FilterBarRow>
-      </FilterBarWrapper>
-      {/* pass form state to modal */}
-      <Modal 
-          showModal={showModal} 
-          setShowModal={setShowModal}
-          list={countryList}
-          locationValue={formFilters.location}
-          locationName={"location"}
-          fulltimeName="fulltime"
-          isFulltime={formFilters.fulltime}
-          placeholder="Filter by location"
-          handleChange={handleInput}
-          handleSubmit={handleSubmit}
-          />
+        </FilterBarWrapper>
+      </form>
+
+      {/* Modal: pass state to modal */}
+      <Modal showModal={showModal} setShowModalCb={setShowModal} list={countryList} />
     </>
+
   )
 }
 

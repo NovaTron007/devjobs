@@ -97,6 +97,7 @@ a:visited {
 .filter-buttons-wrapper > img:nth-of-type(1) {
     display: flex;
     margin: 0 30px;
+    cursor: pointer;
 }
 
 @media(min-width: 830px) {

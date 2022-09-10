@@ -1,11 +1,11 @@
 import CheckBoxWrapper from "../Assets/StyledComponents/CheckboxWrapper"
 
-const Checkbox = ({name, handleChange, isFulltime}) => {
+const Checkbox = ({name, isChecked, value, handleChange}) => {
   
   return (
     <CheckBoxWrapper>
         <label className="checkbox-container">
-            <input type="checkbox" checked={isFulltime} name={name} onChange={handleChange} />
+            <input type="checkbox" name={name} checked={isChecked} value={value} onChange={handleChange} />
             <span className="checkmark"></span>
         </label>
         <div className="checkbox-title">Full time only</div>

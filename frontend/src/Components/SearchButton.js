@@ -7,7 +7,7 @@ const SearchButton = ({text, showModal, setShowModalCb,handleSubmitCb}) => {
     return(
         <div className="filter-buttons-wrapper">
             <img src={FilterIcon} alt="filter" className="form-icon" onClick={() => setShowModalCb(!showModal)}/> {/* toggle modal */}
-            <ButtonWrapper onClick={handleSubmitCb}>
+            <ButtonWrapper onClick={handleSubmitCb} type="submit">
                 <span className="search-btn-text">{text}</span>
                 <img className="search-btn-img form-icon" src={SearchWhite} />
             </ButtonWrapper>
