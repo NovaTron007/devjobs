@@ -7,7 +7,13 @@ export const apiSlice = createApi({
     tagTypes: ["Jobs"],
     endpoints: (builder) => ({ // builder cases
         getJobs: builder.query({
-            query: () => "/jobs", // query method get request
+            query: (filters) =>{
+                const { search, country, fulltime } = filters;
+                return {
+                    url:`/jobs`, // query method get request
+                    params: { search, country, fulltime }
+                };
+            }
         }),
         getSingleJob: builder.query({
             query: (id) => ({
@@ -15,9 +21,9 @@ export const apiSlice = createApi({
                 method: "GET"
             })
         }),
-        // getSearchFilters: builder.query({
+        // getFilteredJobs: builder.query({
         //     query: (filters) => ({
-        //         url: `/jobs/?location=${filters.location}&type=${filters.type}`,
+        //         url: `/jobs/?location=${filters.location}&type=${filters.fulltime}`,
         //         method: "GET"
         //     })
         // })
@@ -29,5 +35,5 @@ export const apiSlice = createApi({
 export const {
     useGetJobsQuery,
     useGetSingleJobQuery,
-    useGetSearchFiltersQuery
+    useGetFilteredJobsQuery
 } = apiSlice

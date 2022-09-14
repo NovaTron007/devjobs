@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+// initialState object
 const initialState = {
-    // useSelector state.filters to access object state or state if no nested object (filters)
-    filters: {
+    filters: { // useSelector state.filters to access object state or state if no nested object (filters)
         search: "",
-        location: "",
+        country: "",
         fulltime: true
     }
 }
@@ -20,6 +20,6 @@ export const filterReducer = createSlice({
     }
 })
 
-export const { addFilters } = filterReducer.actions // desctructure to allow us to dispatch action
+export const { addFilters, addCountries } = filterReducer.actions // desctructure to allow us to dispatch action
 
 export default filterReducer.reducer

@@ -8,24 +8,25 @@ import Job from "../models/Job.js"
 // @access  Public
 export const getJobs = async (req, res) => {
    // Get query params: in url ie: /jobs?type=full-time&search=frontend)
-   const { type, search, sort, location } = req.query
+   const { fulltime, search, sort, country } = req.query
    console.log("getJobs req.query: ", req.query)
 
    // build up query obj document for model, for filtering/retrieving data from db
    const queryObj = {}
 
    // job type query filter: if job type in query param
-   if(type) {
-      queryObj.type = type
+   if(fulltime === true) {
+      queryObj.type = "full-time"
    }
    // search term filter: if search term in query param (search based on job title)
    if(search) {
       // mongodb regex: where the text exists in general (not exact match)
       queryObj.title = {$regex: search, $options: "i"} // term, case insensitive
    }
-   if(location) {
-      queryObj.location = {$regex: location, $options: "i" } // term, case insensitive
+   if(country !== "All") {
+      queryObj.country = {$regex: country, $options: "i" } // term, case insensitive
    }
+   console.log("queryObj: ", queryObj)
 
    // no await: prepare result first with query object before request to db
    let result = Job.find(queryObj)
@@ -50,11 +51,26 @@ export const getJobs = async (req, res) => {
    // jobs with result, and populate createdBy (user relationship in job with specific info only)
    const jobs = await result.populate("user", "photo color")
 
+   // get all countries in dropdown: select field (returns array), distinct: no duplicates
+   const countries = await Job.find().select("country").distinct("country")
+   console.log("countries: ", countries)
+   // const getCountryList = () => {
+   //    console.log("allJobs: ", countries)
+   //    let countrySet = new Set()
+   //    countries.forEach((item) => {
+   //       countrySet.add(item.country)
+   //    })
+   //    return Array.from(countrySet)
+   // }
+
+   // const countries = getCountryList()
+
    // response
    res.status(StatusCodes.OK).json({
       success: true,
       totalJobs,
-      jobs
+      jobs,
+      countries
    })
 }
 

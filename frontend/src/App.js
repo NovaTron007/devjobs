@@ -1,5 +1,4 @@
 import {BrowserRouter, Routes, Route } from "react-router-dom"
-import Header from "./Components/Header";
 import HomePage from "./Pages/HomePage"
 import JobPage from "./Pages/JobPage"
 import Error from "./Pages/Error"
@@ -12,7 +11,6 @@ function App() {
 
   return (  
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/job/:id" element={<JobPage />} />

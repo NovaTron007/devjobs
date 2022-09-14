@@ -13,6 +13,7 @@ const Modal = ({ showModal, setShowModalCb, list }) => {
     const modalContainerRef = useRef(null)
     // dispatch action
     const dispatch = useDispatch()
+
     // get filters state from store
     const { filters } = useSelector((state) => state.filters)
 
@@ -48,9 +49,9 @@ const Modal = ({ showModal, setShowModalCb, list }) => {
                     <div className="modal-container" ref={modalContainerRef}>
                         <div className="modal-filter-select-wrapper">
                             <FormInputSelect
-                                list={["", ...list]}
-                                name="location"
-                                value={filters && filters.location}
+                                list={["All", ...list]}
+                                name="country"
+                                value={filters && filters.country}
                                 placeholder="Filter by location"
                                 handleChange={handleInput}
                                 icon={locationImg}

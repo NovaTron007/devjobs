@@ -1,5 +1,6 @@
 import CompanyHeader from "../Components/CompanyHeader"
 import CompanyContent from "../Components/CompanyContent"
+import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { useParams } from "react-router-dom"
 import { useGetSingleJobQuery } from "../Store/Api/apiSlice"
@@ -11,8 +12,6 @@ const JobPage = () => {
   const { id } = useParams()
   // get single job using slice
   const { data, isSuccess, isLoading, isError, error } = useGetSingleJobQuery(id)
-
-  console.log("data: ", data)
 
   // loading
   if(isLoading){
@@ -29,6 +28,7 @@ const JobPage = () => {
   if(isSuccess) {
     return (
       <>
+          <Header />
           <CompanyHeader company={data.job.company} website={data.job.website} photo={data.job.user.photo} color={data.job.user.color} />
           <CompanyContent job={data.job} />
           <Footer title={data.job.title} type={data.job.type} />
