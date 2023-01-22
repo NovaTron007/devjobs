@@ -3,7 +3,7 @@ import CompanyContent from "../Components/CompanyContent"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { useParams } from "react-router-dom"
-import { useGetSingleJobQuery } from "../Store/Api/apiSlice"
+import { useGetSingleJobQuery } from "../Store/Api/jobsApi"
 import Loader from "../Components/Loader"
 
 

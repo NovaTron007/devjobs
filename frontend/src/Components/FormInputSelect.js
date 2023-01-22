@@ -1,6 +1,6 @@
 
 const FormInputSelect = ({icon, name, list, value, handleChange}) => {
-  console.log("input list: ", list)
+  // console.log("input list: ", list)
   return (
     <div className="form-input-select-row">
         <span className="form-input-select-icon">

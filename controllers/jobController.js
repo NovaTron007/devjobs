@@ -8,7 +8,7 @@ import Job from "../models/Job.js"
 // @access  Public
 export const getJobs = async (req, res) => {
    // Get query params: in url ie: /jobs?type=full-time&search=frontend)
-   const { fulltime, search, sort, country } = req.query
+   const { fulltime, search, sort, country, page } = req.query
    console.log("getJobs req.query: ", req.query)
 
    // build up query obj document for model, for filtering/retrieving data from db
@@ -23,16 +23,16 @@ export const getJobs = async (req, res) => {
       // mongodb regex: where the text exists in general (not exact match)
       queryObj.title = {$regex: search, $options: "i"} // term, case insensitive
    }
-   if(country !== "All") {
-      queryObj.country = {$regex: country, $options: "i" } // term, case insensitive
+   if(country) {
+      if(country !== "All") {
+         queryObj.country = {$regex: country, $options: "i" } // term, case insensitive
+      } else {
+         queryObj.country = { $regex: "", $options: "i"}
+      }
    }
-   console.log("queryObj: ", queryObj)
 
    // no await: prepare result first with query object before request to db
    let result = Job.find(queryObj)
-   
-   // get total of all in db
-   const totalJobs = await Job.countDocuments(queryObj)
 
    // sorting 
    if(sort === "latest") {
@@ -48,8 +48,21 @@ export const getJobs = async (req, res) => {
       result = result.sort("-title")
    }
 
+   // pagination
+   const pageNo = page
+   const limit = 4
+   const skip = (pageNo - 1) * limit // how many items to skip over ie (2 - 1) * 10 = skip 10 items for page 2
+   
+   // get total of all in db
+   let totalJobs = await Job.countDocuments(queryObj)
+
+   // add to result
+   result = result.skip(skip).limit(limit)
+
    // jobs with result, and populate createdBy (user relationship in job with specific info only)
    const jobs = await result.populate("user", "photo color")
+
+   const totalResult = jobs.length
 
    // get all countries in dropdown: select field (returns array), distinct: no duplicates
    const countries = await Job.find().select("country").distinct("country")
@@ -69,6 +82,7 @@ export const getJobs = async (req, res) => {
    res.status(StatusCodes.OK).json({
       success: true,
       totalJobs,
+      totalResult,
       jobs,
       countries
    })

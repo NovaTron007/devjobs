@@ -5,17 +5,12 @@ import FormInputSelect from "./FormInputSelect"
 import locationImg from "../Assets/Images/location.svg"
 // store
 import { useDispatch, useSelector } from "react-redux"
-import { addFilters } from "../Store/filterSlice"
+import { addFilters } from "../Store/jobsSlice"
 
 
-const Modal = ({ showModal, setShowModalCb, list }) => {
+const Modal = ({ showModal, setShowModalCb, list, values, handleChange }) => {
     // modal ref
     const modalContainerRef = useRef(null)
-    // dispatch action
-    const dispatch = useDispatch()
-
-    // get filters state from store
-    const { filters } = useSelector((state) => state.filters)
 
     // show modal: if ref is set and e.target is not modal container then close
     const handleModal = (e) => {
@@ -24,21 +19,10 @@ const Modal = ({ showModal, setShowModalCb, list }) => {
         }
     }
 
-  // set filter values from filter form inputs
-    const handleInput = (e) => {
-        // update checkbox: use state for controlled checkbox
-        console.log("e.target.name: ", e.target.value)
-        if (e.target.value === "fulltime") {
-            dispatch(addFilters({ ...filters, [e.target.name]: !filters.fulltime }))
-        } else {
-            dispatch(addFilters({ ...filters, [e.target.name]: e.target.value }))
-        }
-    }
-
     // submit object to api
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("handleSubmit: ", filters)
+        console.log("handleSubmit")
     }
 
 
@@ -51,19 +35,18 @@ const Modal = ({ showModal, setShowModalCb, list }) => {
                             <FormInputSelect
                                 list={["All", ...list]}
                                 name="country"
-                                value={filters && filters.country}
+                                value={values?.country}
                                 placeholder="Filter by location"
-                                handleChange={handleInput}
+                                handleChange={handleChange}
                                 icon={locationImg}
                             />
                         </div>
                         <div className="modal-filter-checkbox-wrapper">
                             <FormInputCheckbox
                                 name="fulltime"
-                                value="fulltime"
-                                isChecked={filters && filters.fulltime}
+                                value={values?.fulltime}
                                 labelText="Full time"
-                                handleChange={handleInput}
+                                handleChange={handleChange}
                             />
                         </div>
                         <div className="modal-search-button-wrapper">
